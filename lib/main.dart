@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
               height: 80.0,
             ),
             Image.asset(
-              'assets/images/logo.png', // 이미지 파일 경로
+              'assets/apayo_logo.png', // 이미지 파일 경로
               height: 150.0,
             ),
             SizedBox(
@@ -66,11 +66,12 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 24.0,
+              height: 40.0,
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 32.0),
               width: double.infinity,
+              height: 48.0,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -81,16 +82,17 @@ class LoginPage extends StatelessWidget {
                 ),
                 child: Text(
                   '로그인',
-                  style: TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 18.0),
                 ),
               ),
             ),
             SizedBox(
-              height: 16.0,
+              height: 24.0,
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 32.0),
               width: double.infinity,
+              height: 48.0,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -103,28 +105,28 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/images/kakao_logo.png', // 카카오 로고 이미지 파일 경로
+                      'assets/KakaoTalk_logo.jpg', // 카카오 로고 이미지 파일 경로
                       height: 20.0,
                     ),
                     SizedBox(
                       width: 8.0,
                     ),
                     Text(
-                      '카카오로 시작하기',
-                      style: TextStyle(fontSize: 16.0),
+                      '카카오 로그인',
+                      style: TextStyle(fontSize: 18.0),
                     ),
                   ],
                 ),
               ),
             ),
             SizedBox(
-              height: 16.0,
+              height: 24.0,
             ),
             GestureDetector(
               onTap: () {},
               child: Text(
                 '회원가입',
-                style: TextStyle(fontSize: 16.0, color: Colors.grey),
+                style: TextStyle(fontSize: 18.0, color: Colors.grey),
               ),
             ),
           ],
