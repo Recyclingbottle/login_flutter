@@ -89,31 +89,25 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 24.0,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 32.0),
-              width: double.infinity,
-              height: 48.0,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.yellow[800],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 32.0),
+                width: double.infinity,
+                height: 48.0,
+                decoration: BoxDecoration(
+                  color: Colors.yellow[800],
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/KakaoTalk_logo.jpg', // 카카오 로고 이미지 파일 경로
+                      'assets/kakao_login_large_wide.png', // 카카오 로고 이미지 파일 경로
                       height: 20.0,
                     ),
                     SizedBox(
                       width: 8.0,
-                    ),
-                    Text(
-                      '카카오 로그인',
-                      style: TextStyle(fontSize: 18.0),
                     ),
                   ],
                 ),
