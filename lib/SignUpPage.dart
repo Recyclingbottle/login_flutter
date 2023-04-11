@@ -14,6 +14,17 @@ class _SignUpPageState extends State<SignUpPage> {
   final _birthController = TextEditingController();
   String? _selectedGender;
 
+
+  // 생년월일 선택용 드롭다운 메뉴에 사용될 아이템 리스트
+  final _yearList = List.generate(100, (index) => 2022 - index);
+  final _monthList = List.generate(12, (index) => index + 1);
+  final _dayList = List.generate(31, (index) => index + 1);
+
+// 생년월일 선택용 드롭다운 메뉴의 선택된 값
+  int? _selectedYear;
+  int? _selectedMonth;
+  int? _selectedDay;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,17 +95,134 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                controller: _birthController,
-                decoration: InputDecoration(
-                  labelText: '생년월일',
-                ),
-                validator: (value) {
-                  if (value?.isEmpty ?? true) {
-                    return '생년월일을 입력하세요';
-                  }
-                  return null;
-                },
+            DropdownButtonFormField<int>(
+              value: _selectedYear,
+              items: _yearList.map((year) {
+                return DropdownMenuItem<int>(
+                  value: year,
+                  child: Text('$year년'),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  _selectedYear = value;
+                });
+              },
+              decoration: InputDecoration(
+                labelText: '생년',
+              ),
+              validator: (value) {
+                if (value == null) {
+                  return '생년을 선택하세요';
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 16.0),
+            DropdownButtonFormField<int>(
+              value: _selectedMonth,
+              items: _monthList.map((month) {
+                return DropdownMenuItem<int>(
+                  value: month,
+                  child: Text('$month월'),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  _selectedMonth = value;
+                });
+              },
+              decoration: InputDecoration(
+                labelText: '월',
+              ),
+              validator: (value) {
+                if (value == null) {
+                  return '월을 선택하세요';
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 16.0),
+              Row(
+                children: [
+                  Expanded(
+                    child: DropdownButtonFormField<int>(
+                      value: _selectedYear,
+                      items: _yearList.map((year) {
+                        return DropdownMenuItem<int>(
+                          value: year,
+                          child: Text('$year년'),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedYear = value;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        labelText: '년도',
+                      ),
+                      validator: (value) {
+                        if (value == null) {
+                          return '년도를 선택하세요';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 16.0),
+                  Expanded(
+                    child: DropdownButtonFormField<int>(
+                      value: _selectedMonth,
+                      items: _monthList.map((month) {
+                        return DropdownMenuItem<int>(
+                          value: month,
+                          child: Text('$month월'),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedMonth = value;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        labelText: '월',
+                      ),
+                      validator: (value) {
+                        if (value == null) {
+                          return '월을 선택하세요';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 16.0),
+                  Expanded(
+                    child: DropdownButtonFormField<int>(
+                      value: _selectedDay,
+                      items: _dayList.map((day) {
+                        return DropdownMenuItem<int>(
+                          value: day,
+                          child: Text('$day일'),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedDay = value;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        labelText: '일',
+                      ),
+                      validator: (value) {
+                        if (value == null) {
+                          return '일을 선택하세요';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
               DropdownButtonFormField<String>(
