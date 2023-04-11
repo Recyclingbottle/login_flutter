@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login/KakaoLoginPage.dart';
+import 'package:login/SignUpPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +35,7 @@ class LoginPage extends StatelessWidget {
               height: 80.0,
             ),
             Image.asset(
-              'assets/apayo_logo.png', // 이미지 파일 경로
+              'assets/apayo_logo.png',
               height: 150.0,
             ),
             SizedBox(
@@ -56,7 +58,7 @@ class LoginPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
-                obscureText: true, // 비밀번호 입력 시 마스킹 처리
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: '비밀번호',
                   border: OutlineInputBorder(
@@ -90,7 +92,12 @@ class LoginPage extends StatelessWidget {
               height: 24.0,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => KakaoLoginPage()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 32.0),
                 width: double.infinity,
@@ -99,33 +106,30 @@ class LoginPage extends StatelessWidget {
                   color: Colors.yellow[800],
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/kakao_login_large_wide.png', // 카카오 로고 이미지 파일 경로
-                      height: 20.0,
-                    ),
-                    SizedBox(
-                      width: 8.0,
-                    ),
-                  ],
+                child: Image.asset(
+                  'assets/kakao_login_large_wide.png',
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
             SizedBox(
               height: 24.0,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Text(
-                '회원가입',
-                style: TextStyle(fontSize: 18.0, color: Colors.grey),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                  );
+                },
+                child: Text(
+                  '회원가입',
+                  style: TextStyle(fontSize: 18.0, color: Colors.grey),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
-}
