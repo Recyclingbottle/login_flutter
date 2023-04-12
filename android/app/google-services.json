@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247055338830",
+    "project_id": "apayo-4004c",
+    "storage_bucket": "apayo-4004c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247055338830:android:39bf65394d75b06108621f",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247055338830-48b1tcfh3k9adcb5id0p3umkav6goho9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_OE4HhSlh2QwC8kdiPbXBlTipXCadf88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247055338830-48b1tcfh3k9adcb5id0p3umkav6goho9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
